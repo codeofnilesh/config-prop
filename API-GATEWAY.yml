@@ -1,0 +1,11 @@
+server:
+  port: 9293
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: springApp
+            uri: lb://SPRING-APP
+            predicates:
+              - Path=/springApp/**
